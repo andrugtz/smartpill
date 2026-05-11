@@ -189,6 +189,8 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
             margin-top: 40px;
+            margin-left: 60px;
+            margin-right: 60px;
         }
 
         .feature {
@@ -222,6 +224,8 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 40px;
+            margin-left: 60px;
+            margin-right: 60px;
         }
 
         .stat {
