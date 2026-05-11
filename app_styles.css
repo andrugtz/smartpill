@@ -1,0 +1,133 @@
+/* ===== Titulos App ===== */
+        .section {
+            max-width: 1200px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 1px;
+            color: #2c3e50;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 1px;
+            margin-left: 11px;
+            line-height: 1.8;
+        }
+
+/* ===== Descripción Smart Pill ===== */
+        
+        .section {
+            background-color: #f9f9f9;
+        }
+
+        .carousel-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            padding: 100px 5%;
+            background: linear-gradient(to right, #eef5ff, #f8fbff);
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .carousel-container {
+            width: 1100px;
+            overflow: hidden;
+            padding: 40px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        /* ===== Cards ===== */
+
+        .app-card {
+            min-width: 280px;
+            height: 575px;
+            background: white;
+            border-radius: 35px;
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+            opacity: 0.5;
+            transform: scale(0.85);
+            filter: blur(1px);
+        }
+
+        /* ===== Card central ===== */
+
+        .app-card.active {
+            background: linear-gradient(180deg, #86aace, #0d2e51);
+            transform: scale(1);
+            opacity: 1;
+            filter: blur(0);
+            z-index: 2;
+        }
+
+        /* ===== Imagen levantada ===== */
+
+        .app-card img {
+            width: 138px;
+            border-radius: 20px;
+            position: absolute;
+            top: -43px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: 0.3s ease;
+        }
+
+        /* ===== Texto ===== */
+
+        .card-info {
+            margin-top: 235px;
+        }
+
+        .card-info h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .card-info p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* Texto blanco card activa */
+
+        .app-card.active h3,
+        .app-card.active p {
+            color: white;
+        }
+
+        /* ===== Flechas ===== */
+
+        .arrow {
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            background: white;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .arrow:hover {
+            transform: scale(1.1);
+        }
