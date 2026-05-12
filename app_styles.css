@@ -131,3 +131,64 @@
         .arrow:hover {
             transform: scale(1.1);
         }
+
+        @media (max-width: 768px) {
+
+    .carousel-section {
+        flex-direction: column;
+        padding: 40px 15px;
+        overflow: hidden;
+    }
+
+    .carousel-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .carousel-track {
+        transform: none !important;
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 80px 10px 20px;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .app-card {
+        min-width: 85%;
+        max-width: 85%;
+        height: auto;
+        flex-shrink: 0;
+
+        scroll-snap-align: center;
+
+        transform: scale(1) !important;
+        opacity: 1 !important;
+        filter: blur(0) !important;
+    }
+
+    .app-card img {
+        width: 130px;
+        top: -60px;
+    }
+
+    .card-info {
+        margin-top: 90px;
+    }
+
+    .card-info h3 {
+        font-size: 22px;
+    }
+
+    .card-info p {
+        font-size: 13px;
+    }
+
+    .arrow {
+        display: none;
+    }
+}
