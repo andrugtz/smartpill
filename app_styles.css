@@ -132,63 +132,128 @@
             transform: scale(1.1);
         }
 
+        @media (max-width: 1024px) {
+            .carousel-container {
+                width: 90%;
+            }
+            
+            .app-card {
+                min-width: 250px;
+                height: 500px;
+            }
+            
+            .card-info {
+                margin-top: 200px;
+            }
+            
+            .card-info h3 {
+                font-size: 24px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .carousel-section {
+                flex-direction: column;
+                padding: 50px 15px;
+                overflow: hidden;
+                border-radius: 15px;
+            }
 
-    .carousel-section {
-        flex-direction: column;
-        padding: 40px 15px;
-        overflow: hidden;
-    }
+            .carousel-container {
+                width: 100%;
+                overflow: hidden;
+            }
 
-    .carousel-container {
-        width: 100%;
-        overflow: hidden;
-    }
+            .carousel-track {
+                transform: none !important;
+                display: flex;
+                gap: 20px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                padding: 80px 10px 20px;
+                scrollbar-width: none; /* Firefox */
+            }
 
-    .carousel-track {
-        transform: none !important;
-        display: flex;
-        gap: 20px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding: 80px 10px 20px;
-    }
+            .carousel-track::-webkit-scrollbar {
+                display: none; /* Chrome, Safari, Opera */
+            }
 
-    .carousel-track::-webkit-scrollbar {
-        display: none;
-    }
+            .app-card {
+                min-width: 85%;
+                max-width: 85%;
+                height: auto;
+                min-height: 400px;
+                flex-shrink: 0;
+                scroll-snap-align: center;
+                transform: scale(1) !important;
+                opacity: 1 !important;
+                filter: blur(0) !important;
+                margin: 0 auto;
+            }
 
-    .app-card {
-        min-width: 85%;
-        max-width: 85%;
-        height: auto;
-        flex-shrink: 0;
+            .app-card img {
+                width: 100px;
+                top: -50px;
+            }
 
-        scroll-snap-align: center;
+            .card-info {
+                margin-top: 70px;
+                padding: 0 10px;
+            }
 
-        transform: scale(1) !important;
-        opacity: 1 !important;
-        filter: blur(0) !important;
-    }
+            .card-info h3 {
+                font-size: 20px;
+            }
 
-    .app-card img {
-        width: 130px;
-        top: -60px;
-    }
+            .card-info p {
+                font-size: 13px;
+            }
 
-    .card-info {
-        margin-top: 90px;
-    }
+            .arrow {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 26px;
+                text-align: center;
+            }
+            
+            .section-subtitle {
+                font-size: 13px;
+                text-align: center;
+                margin-left: 0;
+            }
+        }
 
-    .card-info h3 {
-        font-size: 22px;
-    }
-
-    .card-info p {
-        font-size: 13px;
-    }
-
-    .arrow {
-        display: none;
-    }
-}
+        @media (max-width: 480px) {
+            .carousel-section {
+                padding: 40px 10px;
+            }
+            
+            .app-card {
+                min-width: 90%;
+                max-width: 90%;
+                min-height: 380px;
+            }
+            
+            .app-card img {
+                width: 90px;
+                top: -45px;
+            }
+            
+            .card-info {
+                margin-top: 60px;
+            }
+            
+            .card-info h3 {
+                font-size: 18px;
+            }
+            
+            .card-info p {
+                font-size: 12px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+        }

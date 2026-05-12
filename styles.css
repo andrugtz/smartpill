@@ -496,19 +496,35 @@
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                gap: 20px;
-                padding: 20px;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+            
+            .logo-text, .logo-text2 {
+                font-size: 20px;
+            }
+            
+            .nav-container {
+                width: 100%;
             }
 
             nav ul {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
             }
 
-            .nav-container {
-                flex-direction: column;
-                gap: 20px;
+            nav a {
+                font-size: 12px;
+                padding: 6px 8px;
+            }
+            
+            .submenu-nav {
+                min-width: 140px;
             }
 
             .hero h1 {
@@ -516,21 +532,150 @@
             }
 
             .features,
-            .stats,
-            .destinations-grid {
+            .stats {
                 grid-template-columns: 1fr;
+                margin-left: 20px;
+                margin-right: 20px;
+                gap: 20px;
+            }
+            
+            .feature {
+                padding: 20px;
+            }
+            
+            .feature-icon {
+                font-size: 36px;
             }
 
-            .packages-grid {
+            .funciones-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .funciones-image {
+                height: 150px;
+            }
+            
+            .funciones-info {
+                padding: 15px;
+            }
+            
+            .funciones-name {
+                font-size: 16px;
+            }
+            
+            .funciones-location {
+                font-size: 12px;
+            }
+
+            .videos-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .videos-image {
+                height: 200px;
+            }
+            
+            .videos-info {
+                padding: 20px;
+            }
+            
+            .videos-name {
+                font-size: 18px;
             }
 
             .section {
                 padding: 40px 20px;
             }
+            
+            .section-title {
+                margin-left: 0;
+                text-align: center;
+            }
+            
+            .section-subtitle {
+                margin-left: 0;
+                text-align: center;
+            }
+            
+            .creadores {
+                padding: 50px 5%;
+            }
+            
+            .creadores-header h2 {
+                font-size: 28px;
+            }
+            
+            .creadores-header p {
+                font-size: 16px;
+            }
+            
+            .creadores-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .creador-card {
+                padding: 25px;
+                border-radius: 15px;
+            }
+            
+            .creador-card h3 {
+                font-size: 20px;
+            }
+            
+            .creador-desc {
+                font-size: 14px;
+            }
+            
+            footer {
+                padding: 25px 20px;
+            }
+            
+            footer p {
+                font-size: 12px;
+                line-height: 1.6;
+            }
         }
 
+        @media (max-width: 480px) {
+            .funciones-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
 
+            .section-subtitle {
+                font-size: 12px;
+            }
+
+            .app-card {
+                min-width: 190px;
+                height: 360px;
+                padding: 20px;
+            }
+
+            .app-card img {
+                width: 120px;
+            }
+
+            .card-info h3 {
+                font-size: 18px;
+            }
+
+            .card-info p {
+                font-size: 12px;
+            }
+
+            .arrow {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
 
 /* ========================= */
 /* ======= TABLETS ========= */
@@ -554,6 +699,7 @@
     .section-title {
         font-size: 28px;
         text-align: center;
+        margin-left: 0;
     }
 
     .section-subtitle {
@@ -578,152 +724,5 @@
 
     .card-info h3 {
         font-size: 24px;
-    }
-}
-
-/* ========================= */
-/* ======= CELULARES ======= */
-/* ========================= */
-
-@media (max-width: 768px) {
-
-    /* HEADER */
-
-    header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .nav-container {
-        width: 100%;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    nav a {
-        font-size: 12px;
-        padding: 8px 10px;
-    }
-
-    /* LOGO */
-
-    .logo {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* TITULOS */
-
-    .section-title {
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .section-subtitle {
-        font-size: 13px;
-        text-align: center;
-        line-height: 1.6;
-        margin-left: 0;
-    }
-
-    /* CARRUSEL */
-
-    .carousel-section {
-        flex-direction: column;
-        padding: 70px 0;
-    }
-
-    .carousel-container {
-        width: 100%;
-    }
-
-    .carousel-track {
-        gap: 15px;
-    }
-
-    .app-card {
-        min-width: 220px;
-        height: 380px;
-    }
-
-    .app-card img {
-        width: 140px;
-        top: -70px;
-    }
-
-    .card-info {
-        margin-top: 110px;
-    }
-
-    .card-info h3 {
-        font-size: 22px;
-    }
-
-    .card-info p {
-        font-size: 13px;
-    }
-
-    /* FLECHAS */
-
-    .arrow {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
-    }
-
-    /* FOOTER */
-
-    footer {
-        text-align: center;
-        padding: 20px;
-    }
-
-    footer p {
-        font-size: 13px;
-        line-height: 1.8;
-    }
-}
-
-/* ========================= */
-/* ===== PANTALLAS MINI ==== */
-/* ========================= */
-
-@media (max-width: 480px) {
-
-    .section-title {
-        font-size: 20px;
-    }
-
-    .section-subtitle {
-        font-size: 12px;
-    }
-
-    .app-card {
-        min-width: 190px;
-        height: 360px;
-        padding: 20px;
-    }
-
-    .app-card img {
-        width: 120px;
-    }
-
-    .card-info h3 {
-        font-size: 18px;
-    }
-
-    .card-info p {
-        font-size: 12px;
-    }
-
-    .arrow {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
     }
 }
