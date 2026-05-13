@@ -257,3 +257,160 @@
                 font-size: 24px;
             }
         }
+
+        /* Estilos específicos para la página App (carrusel) */
+
+/* Contenedor general */
+.section { max-width: 1200px; }
+.section-title { font-size: 32px; font-weight: bold; color:#2c3e50; margin-bottom:10px; }
+.section-subtitle { font-size:14px; color:#777; margin-bottom:10px; }
+
+/* Carrusel - Desktop / Tablet */
+.carousel-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 100px 5%;
+  background: linear-gradient(to right, #eef5ff, #f8fbff);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carousel-container {
+  width: 1100px;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
+
+/* Cards */
+.app-card {
+  min-width: 280px;
+  height: 575px;
+  background: white;
+  border-radius: 35px;
+  padding: 30px 25px;
+  text-align: center;
+  position: relative;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  opacity: 0.5;
+  transform: scale(0.85);
+  filter: blur(1px);
+}
+
+.app-card.active {
+  background: linear-gradient(180deg, #86aace, #0d2e51);
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0);
+  z-index: 2;
+}
+
+.app-card img {
+  width: 138px;
+  border-radius: 20px;
+  position: absolute;
+  top: -43px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Texto/Info */
+.card-info { margin-top: 235px; }
+.card-info h3 { font-size: 28px; color:#2c3e50; margin-bottom:10px; }
+.card-info p { font-size:14px; color:#666; line-height:1.7; }
+
+.arrow {
+  width: 60px; height: 60px; border: none; border-radius: 50%;
+  background: white; font-size: 28px; cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: 0.3s;
+}
+
+/* Responsive: tablets */
+@media (max-width: 1024px) {
+  .carousel-container { width: 90%; }
+  .app-card { min-width: 250px; height: 500px; }
+  .card-info { margin-top: 200px; }
+  .card-info h3 { font-size: 24px; }
+}
+
+/* Responsive: móviles -> Forzar carrusel horizontal (swipe) */
+@media (max-width: 768px) {
+  .carousel-section {
+    flex-direction: column;
+    padding: 50px 15px;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    flex-direction: row;               /* fila horizontal */
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 40px 12px 20px;
+  }
+
+  .carousel-track::-webkit-scrollbar { display: none; }
+
+  .carousel-track > .app-card {
+    flex: 0 0 82%;
+    max-width: 82%;
+    min-width: 82%;
+    scroll-snap-align: center;
+    margin: 0 auto;
+    height: auto;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .app-card {
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  }
+
+  .app-card img {
+    position: relative;
+    top: -30px;
+    width: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .card-info { margin-top: 40px; padding: 0 10px; }
+  .card-info h3 { font-size: 20px; }
+  .card-info p  { font-size: 13px; }
+
+  .arrow { display: none; }
+  .section-title { font-size: 26px; text-align:center; }
+  .section-subtitle { font-size:13px; text-align:center; margin-left:0; }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .carousel-section { padding: 40px 10px; }
+  .carousel-track > .app-card { flex: 0 0 90%; max-width: 90%; min-width: 90%; }
+  .app-card img { width: 90px; top: -45px; }
+  .card-info { margin-top: 60px; }
+  .card-info h3 { font-size: 18px; }
+  .card-info p { font-size: 12px; }
+  .section-title { font-size: 24px; }
+}
