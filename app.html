@@ -4,173 +4,356 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App</title>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="app_styles.css">
 </head>
+
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo de la Empresa">
-            <span class="logo-text">Smart</span>
-            <span class="logo-text2">Pill</span>
-        </div>
 
-        <div class="nav-container">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="index.html#funciones">Funciones</a>
+<!-- HEADER -->
+<header>
 
-                        <ul class="submenu-nav">
-                            <li><a href="app.html">App</a></li>
-                            <li><a href="software.html">Software</a></li>
-                            <li><a href="dispositivo.html">Dispositivo</a></li>
-                            <li><a href="hardware.html">Hardware</a></li>
-                        </ul>
-                    </li>
+    <div class="header-inner">
 
-                    <li><a href="#videos">Videos Explicativos</a></li>
-                    <li><a href="index.html#nosotros">Sobre Nosotros</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
 
+            <img src="logo.png" alt="Logo SmartPill">
 
-    <!-- Secciones Aplicación -->
-    <section class="section section">
-        <h2 class="section-title">Aplicación Inteligente SmartPill</h2>
-            <p class="section-subtitle">
-                Descubre las herramientas y funcionalidades diseñadas para mejorar
-                la organización, supervisión y seguimiento del tratamiento médico.
-            </p>
-
-
-        
-        <section class="carousel-section">
-
-    <button class="arrow left" onclick="moveSlide(-1)">
-        ❮
-    </button>
-
-    <div class="carousel-container">
-
-        <div class="carousel-track">
-
-            <!-- CARD 1 -->
-            <div class="app-card active">
-                <img src="sesion_app.png" alt="">
-
-                <div class="card-info">
-                    <h3>Inicio de Sesión y Registro</h3>
-                    <p>
-                        Accede de forma segura a SmartPill con tu correo y contraseña. Si no tienes una cuenta, puedes crearla fácilmente para gestionar medicamentos y recordatorios personalizados.
-                    </p>
-                </div>
+            <div class="logo-name">
+                <span class="logo-text">Smart</span>
+                <span class="logo-text2">Pill</span>
             </div>
 
-            <!-- CARD 2 -->
-            <div class="app-card active">
-                <img src="perfil_app.png" alt="">
+        </a>
 
-                <div class="card-info">
-                    <h3>Selección de Perfil</h3>
-                    <p>
-                        Elige el tipo de perfil que mejor se adapte a tus necesidades: Paciente o Cuidador. Cada opción brinda funciones personalizadas para facilitar el seguimiento, control y administración de medicamentos de manera eficiente.
-                    </p>
-                </div>
-            </div>
+        <!-- BOTON HAMBURGUESA -->
+        <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            type="button"
+        >
+            <span class="bar"></span>
+        </button>
 
-            <!-- CARD 3 -->
-            <div class="app-card active">
-                <img src="menu_app.png" alt="">
+        <!-- NAV -->
+        <nav id="main-nav" class="nav-container">
 
-                <div class="card-info">
-                    <h3>Menú Principal</h3>
-                    <p>
-                        Accede rápidamente a las principales funciones de SmartPill desde su menú. Consulta el inicio, administra medicamentos, revisa el historial, personaliza la configuración y accede a instrucciones para un mejor uso.
-                </div>
-            </div>
+            <ul>
 
-            <!-- CARD 4 -->
-            <div class="app-card">
-                <img src="inicio_app.png" alt="">
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
 
-                <div class="card-info">
-                    <h3>Inicio</h3>
+                <li class="dropdown">
 
-                    <p>
-                        Visualiza de manera rápida la información más importante del día, incluyendo la cantidad de medicamentos programados, el último medicamento registrado, el estado del pastillero y el progreso diario de las tomas realizadas.
-                    </p>
-                </div>
-            </div>
+                    <a href="index.html#funciones">
+                        Funciones
+                    </a>
 
-            <!-- CARD 5 -->
-            <div class="app-card">
-                <img src="medicamentos_app.png" alt="">
+                    <ul class="submenu-nav">
 
-                <div class="card-info">
-                    <h3>Medicamentos</h3>
+                        <li>
+                            <a href="app.html">App</a>
+                        </li>
 
-                    <p>
-                        Administra fácilmente cada tratamiento registrando el nombre del medicamento, dosis, frecuencia, horario de inicio, duración y notas adicionales. Además, permite identificar cada medicamento mediante colores y ofrece opciones para registrar o eliminar información.
-                    </p>
-                </div>
-            </div>
+                        <li>
+                            <a href="software.html">Software</a>
+                        </li>
 
-            <!-- CARD 6 -->
-            <div class="app-card">
-                <img src="historial_app.png" alt="">
+                        <li>
+                            <a href="dispositivo.html">Dispositivo</a>
+                        </li>
 
-                <div class="card-info">
-                    <h3>Historial y Gráficas</h3>
+                        <li>
+                            <a href="hardware.html">Hardware</a>
+                        </li>
 
-                    <p>
-                        Consulta el seguimiento de medicamentos mediante una gráfica que muestra las tomas realizadas y las omitidas. Además, visualiza un historial detallado con la lista de medicamentos programados y el estado de cada uno, indicando si fueron tomados o no.
-                    </p>
-                </div>
-            </div>
+                    </ul>
 
-            <!-- CARD 7 -->
-            <div class="app-card">
-                <img src="configuracion_app.png" alt="">
+                </li>
 
-                <div class="card-info">
-                    <h3>Configuración</h3>
+                <li>
+                    <a href="index.html#videos">
+                        Video de Funcionamiento
+                    </a>
+                </li>
 
-                    <p>
-                        Personaliza la aplicación modificando la información de tu perfil, como nombre de usuario, correo electrónico y el modo de uso, permitiendo cambiar entre paciente o cuidador según tus necesidades.
-                    </p>
-                </div>
-            </div>
+                <li>
+                    <a href="#nosotros">
+                        Sobre Nosotros
+                    </a>
+                </li>
 
-        </div>
+            </ul>
+
+        </nav>
 
     </div>
 
-    <button class="arrow right" onclick="moveSlide(1)">
-        ❯
-    </button>
+</header>
 
-</section>
-        
+<!-- SECCION -->
+<section class="section">
+
+    <h2 class="section-title">
+        Aplicación Inteligente SmartPill
+    </h2>
+
+    <p class="section-subtitle">
+        Descubre las herramientas y funcionalidades diseñadas para mejorar
+        la organización, supervisión y seguimiento del tratamiento médico.
+    </p>
+
+    <!-- CARRUSEL -->
+    <section class="carousel-section">
+
+        <button class="arrow left" onclick="moveSlide(-1)">
+            ❮
+        </button>
+
+        <div class="carousel-container">
+
+            <div class="carousel-track">
+
+                <!-- CARD 1 -->
+                <div class="app-card active">
+
+                    <img src="sesion_app.png" alt="">
+
+                    <div class="card-info">
+
+                        <h3>
+                            Inicio de Sesión y Registro
+                        </h3>
+
+                        <p>
+                            Accede de forma segura a SmartPill con tu correo y contraseña.
+                            Si no tienes una cuenta, puedes crearla fácilmente para gestionar
+                            medicamentos y recordatorios personalizados.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="app-card">
+
+                    <img src="perfil_app.png" alt="">
+
+                    <div class="card-info">
+
+                        <h3>
+                            Selección de Perfil
+                        </h3>
+
+                        <p>
+                            Elige el tipo de perfil que mejor se adapte a tus necesidades: Paciente o Cuidador. Cada opción brinda funciones 
+                            personalizadas para facilitar el seguimiento, control y administración de medicamentos de manera eficiente.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="app-card">
+
+                    <img src="menu_app.png" alt="">
+
+                    <div class="card-info">
+
+                        <h3>
+                            Menú Principal
+                        </h3>
+
+                        <p>
+                            Accede rápidamente a las principales funciones de SmartPill desde su menú. Consulta el inicio, administra 
+                            medicamentos, revisa el historial, personaliza la configuración y accede a instrucciones para un mejor uso.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="app-card">
+
+                    <img src="inicio_app.png" alt="">
+
+                    <div class="card-info">
+
+                        <h3>
+                            Inicio
+                        </h3>
+
+                        <p>
+                             Visualiza de manera rápida la información más importante del día, incluyendo la cantidad de medicamentos 
+                             programados, el último medicamento registrado, el estado del pastillero y el progreso diario de las tomas realizadas.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="app-card">
+
+                    <img src="medicamentos_app.png" alt="">
+
+                    <div class="card-info">
+
+                        <h3>
+                            Medicamentos
+                        </h3>
+
+                        <p>
+                            Administra fácilmente cada tratamiento registrando el nombre del medicamento, dosis, frecuencia, 
+                            horario de inicio, duración y notas adicionales. Además, permite identificar cada medicamento 
+                            mediante colores y ofrece opciones para registrar o eliminar información.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="app-card">
+
+                    <img src="historial_app.png" alt="">
+
+                    <div class="card-info">
+
+                        <h3>
+                            Historial y Gráficas
+                        </h3>
+
+                        <p>
+                            Consulta el seguimiento de medicamentos mediante una gráfica que muestra las 
+                            tomas realizadas y las omitidas. Además, visualiza un historial detallado con 
+                            la lista de medicamentos programados y el estado de cada uno, indicando si fueron 
+                            tomados o no.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 7 -->
+                <div class="app-card">
+
+                    <img src="configuracion_app.png" alt="">
+
+                    <div class="card-info">
+
+                        <h3>
+                            Configuración
+                        </h3>
+
+                        <p>
+                            Personaliza la aplicación modificando la información de tu perfil, como nombre 
+                            de usuario, correo electrónico y el modo de uso, permitiendo cambiar entre 
+                            paciente o cuidador según tus necesidades.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="arrow right" onclick="moveSlide(1)">
+            ❯
+        </button>
 
     </section>
 
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>
-            &copy; CETI Rio Santiago | Contáctanos:
-            <a href="mailto:a22300052@ceti.mx">a22300052@ceti.mx</a> |
-            <a href="mailto:a22300037@ceti.mx">a22300037@ceti.mx</a>
-        </p>
-    </footer>
-    
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<!-- FOOTER -->
+<footer>
 
+    <p>
+        &copy; CETI Rio Santiago | Contáctanos:
+
+        <a href="mailto:a22300052@ceti.mx">
+            a22300052@ceti.mx
+        </a>
+
+        |
+
+        <a href="mailto:a22300037@ceti.mx">
+            a22300037@ceti.mx
+        </a>
+    </p>
+
+</footer>
+
+<!-- SCRIPT MENU -->
+<script>
+
+(function () {
+      const header = document.querySelector('header');
+      const btn = document.getElementById('hamburger');
+      const nav = document.getElementById('main-nav');
+
+      if (!btn || !header || !nav) return;
+
+      btn.addEventListener('click', () => {
+        const open = document.body.classList.toggle('menu-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflowX = open ? 'hidden' : '';      });
+
+      // Toggle submenus on mobile
+      document.querySelectorAll('#main-nav .dropdown > a').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const parent = link.parentElement;
+            parent.classList.toggle('open');
+          }
+        });
+      });
+
+      // Close menu when resizing to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && document.body.classList.contains('menu-open')) {
+          document.body.classList.remove('menu-open');
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+          // close any open submenu states
+          document.querySelectorAll('#main-nav .dropdown.open').forEach(li => li.classList.remove('open'));
+        }
+      });
+
+      // Close menu on outside click
+      document.addEventListener('click', (e) => {
+        if (!document.body.classList.contains('menu-open')) return;
+        // if click is outside header-inner, close menu
+        const headerInner = document.querySelector('.header-inner');
+        if (headerInner && !headerInner.contains(e.target)) {
+          document.body.classList.remove('menu-open');
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
+    })();
+
+</script>
+
+<!-- SCRIPT CARRUSEL -->
 <script>
 
 const track = document.querySelector(".carousel-track");
@@ -185,8 +368,11 @@ function updateCarousel() {
     let cardWidth;
 
     if(isMobile){
+
         cardWidth = window.innerWidth * 0.82 + 18;
+
     } else {
+
         cardWidth = 310;
     }
 
@@ -220,12 +406,15 @@ function moveSlide(direction){
 let startX = 0;
 
 track.addEventListener("touchstart", e => {
+
     startX = e.touches[0].clientX;
+
 });
 
 track.addEventListener("touchend", e => {
 
     let endX = e.changedTouches[0].clientX;
+
     let diff = startX - endX;
 
     if(diff > 50){
@@ -235,6 +424,7 @@ track.addEventListener("touchend", e => {
     if(diff < -50){
         moveSlide(-1);
     }
+
 });
 
 window.addEventListener("resize", updateCarousel);
