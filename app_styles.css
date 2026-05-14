@@ -342,75 +342,72 @@
   .card-info h3 { font-size: 24px; }
 }
 
-/* Responsive: móviles -> Forzar carrusel horizontal (swipe) */
+/* Mobile: carrusel VERTICAL (tarjetas apiladas) */
 @media (max-width: 768px) {
   .carousel-section {
     flex-direction: column;
-    padding: 50px 15px;
-    overflow: hidden;
-    border-radius: 15px;
+    padding: 30px 12px;
+    border-radius: 18px;
   }
 
   .carousel-container {
     width: 100%;
-    overflow: hidden;
+    overflow: visible; /* permitimos que el contenido vertical sea visible */
+    padding: 0;
   }
 
+  /* El track pasa a columna en móvil (sin scroll horizontal) */
   .carousel-track {
     display: flex;
-    flex-direction: row;               /* fila horizontal */
+    flex-direction: column;
     gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 40px 12px 20px;
+    padding: 0;
+    overflow: visible;           /* importante: quitar overflow-x para evitar scroll horizontal */
+    scroll-snap-type: none;      /* desactivar scroll-snap en vertical */
+    -webkit-overflow-scrolling: auto;
   }
 
-  .carousel-track::-webkit-scrollbar { display: none; }
-
+  /* Cada tarjeta ocupa el ancho completo (con márgenes laterales opcionales) */
   .carousel-track > .app-card {
-    flex: 0 0 82%;
-    max-width: 82%;
-    min-width: 82%;
-    scroll-snap-align: center;
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     margin: 0 auto;
     height: auto;
     transform: none !important;
     opacity: 1 !important;
     filter: none !important;
-  }
-
-  .app-card {
+    scroll-snap-align: none;
+    box-shadow: 0 8px 26px rgba(4,20,40,0.06);
+    border-radius: 16px;
     padding: 20px;
-    border-radius: 20px;
-    position: relative;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
   }
 
+  /* Ajuste de la imagen "flotante" para que no provoque overflow:
+     pasamos a posición relativa y la centramos arriba de la tarjeta */
   .app-card img {
     position: relative;
-    top: -30px;
-    width: 100px;
+    top: -30px;           /* mantiene efecto "levantado" pero sin overflow horizontal */
     left: 50%;
     transform: translateX(-50%);
+    width: 100px;         /* ajustar tamaño según prefieras */
+    display: block;
+    margin: 0 auto;
   }
 
-  .card-info { margin-top: 40px; padding: 0 10px; }
+  .card-info {
+    margin-top: 12px;     /* ya no necesita tanto espacio porque la imagen es relativa */
+    padding: 0 12px;
+  }
+
   .card-info h3 { font-size: 20px; }
   .card-info p  { font-size: 13px; }
 
+  /* Ocultar flechas si las tienes */
   .arrow { display: none; }
-  .section-title { font-size: 26px; text-align:center; }
-  .section-subtitle { font-size:13px; text-align:center; margin-left:0; }
-}
 
-/* Pantallas muy pequeñas */
-@media (max-width: 480px) {
-  .carousel-section { padding: 40px 10px; }
-  .carousel-track > .app-card { flex: 0 0 90%; max-width: 90%; min-width: 90%; }
-  .app-card img { width: 90px; top: -45px; }
-  .card-info { margin-top: 60px; }
-  .card-info h3 { font-size: 18px; }
-  .card-info p { font-size: 12px; }
-  .section-title { font-size: 24px; }
+  /* Titulos / subtitulos en móvil */
+  .section-title { font-size: 26px; text-align: center; }
+  .section-subtitle { font-size: 13px; text-align: center; margin-left: 0; }
 }

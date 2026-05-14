@@ -52,6 +52,39 @@
 
         </div>
 
+        <header>
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo.png" alt="SmartPill logo" />
+      <div>
+        <div class="logo-text">SmartPill</div>
+        <div class="logo-text2">SmartPill</div>
+      </div>
+    </div>
+
+    <!-- Hamburger (visible en mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+      <span class="bar"></span>
+    </button>
+
+    <!-- Navigation: conserva tu nav existente; añade id="main-nav" -->
+    <nav id="main-nav" class="nav-container" role="navigation">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#funciones">Funciones</a></li>
+        <li class="dropdown">
+          <a href="#videos">Videos Explicativos</a>
+          <ul class="submenu-nav">
+            <li><a href="#video1">Video 1</a></li>
+            <li><a href="#video2">Video 2</a></li>
+          </ul>
+        </li>
+        <li><a href="#sobre">Sobre Nosotros</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
     </header>
 
 
@@ -300,6 +333,53 @@
         </p>
 
     </footer>
+
+    <script>
+  (function(){
+    const header = document.querySelector('header');
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('main-nav');
+    if(!btn || !header || !nav) return;
+
+    btn.addEventListener('click', () => {
+      const open = header.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      // optionally lock body scroll when menu is open:
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    // For submenu toggling on mobile - we'll toggle class 'open' on parent <li>
+    document.querySelectorAll('nav .dropdown > a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        // only on mobile sizes
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = link.parentElement;
+          parent.classList.toggle('open');
+        }
+      });
+    });
+
+    // Close menu on resize to desktop
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 768 && header.classList.contains('menu-open')) {
+        header.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close on outside click (optional)
+    document.addEventListener('click', (e) => {
+      if(!header.classList.contains('menu-open')) return;
+      if(!header.contains(e.target)) {
+        header.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+  })();
+</script>
 
 </body>
 
