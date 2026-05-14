@@ -173,41 +173,73 @@
 
 <script>
 
-    const track = document.querySelector(".carousel-track");
-    const cards = document.querySelectorAll(".app-card");
+const track = document.querySelector(".carousel-track");
+const cards = document.querySelectorAll(".app-card");
 
-    let currentIndex = 0;
+let currentIndex = 0;
 
-    function updateCarousel() {
+function updateCarousel() {
 
-        const cardWidth = 310;
+    const isMobile = window.innerWidth <= 768;
 
-        track.style.transform =
-            `translateX(calc(50% - ${currentIndex * cardWidth + 140}px))`;
+    let cardWidth;
 
-        cards.forEach(card => {
-            card.classList.remove("active");
-        });
-
-        cards[currentIndex].classList.add("active");
+    if(isMobile){
+        cardWidth = window.innerWidth * 0.82 + 18;
+    } else {
+        cardWidth = 310;
     }
 
-    function moveSlide(direction) {
+    track.style.transform =
+        `translateX(calc(50% - ${currentIndex * cardWidth + (cardWidth / 2)}px))`;
 
-        currentIndex += direction;
+    cards.forEach(card => {
+        card.classList.remove("active");
+    });
 
-        if(currentIndex < 0){
-            currentIndex = 0;
-        }
+    cards[currentIndex].classList.add("active");
+}
 
-        if(currentIndex >= cards.length){
-            currentIndex = cards.length - 1;
-        }
+function moveSlide(direction){
 
-        updateCarousel();
+    currentIndex += direction;
+
+    if(currentIndex < 0){
+        currentIndex = 0;
+    }
+
+    if(currentIndex >= cards.length){
+        currentIndex = cards.length - 1;
     }
 
     updateCarousel();
+}
+
+/* TOUCH / SWIPE */
+
+let startX = 0;
+
+track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchend", e => {
+
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if(diff > 50){
+        moveSlide(1);
+    }
+
+    if(diff < -50){
+        moveSlide(-1);
+    }
+});
+
+window.addEventListener("resize", updateCarousel);
+
+updateCarousel();
 
 </script>
 

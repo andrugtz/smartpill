@@ -1135,15 +1135,15 @@ nav a:hover{ background:#0f5583; color:#fff; transform: translateY(-2px); }
 .hamburger .bar::after{ top: 8px; }
 
 /* when header has class menu-open, animate hamburger to X */
-header.menu-open .hamburger .bar{
+body.menu-open .hamburger .bar{
   transform: rotate(45deg);
   background: transparent;
 }
-header.menu-open .hamburger .bar::before{
+body.menu-open .hamburger .bar::before{
   transform: rotate(90deg);
   top: 0;
 }
-header.menu-open .hamburger .bar::after{
+body.menu-open .hamburger .bar::after{
   opacity: 0;
   transform: translateX(10px);
 }
@@ -1268,134 +1268,163 @@ footer{
    - force grids to single column
    ===================== */
 @media (max-width: 768px){
-  :root{ --gutter: 18px; }
-  .header-inner{ padding:12px 16px; }
 
-  /* Show hamburger, hide full nav by default */
-  .hamburger{ display:flex; }
-  nav ul{ display:flex; gap:10px; align-items:center; margin:0; padding:0; }
+  :root{
+    --gutter: 18px;
+  }
 
-  /* We'll hide the desktop nav and show mobile layout via header.menu-open */
-  /* Desktop: nav inline; Mobile default: hide nav items (except we keep as hidden via CSS below) */
-  nav ul { display: none; } /* hidden by default on mobile */
+  /* HEADER */
+  .header-inner{
+    padding: 12px 16px;
+    position: relative;
+  }
 
-  /* when menu open -> show nav as column full width dropdown */
-  header.menu-open nav ul {
-    display:flex;
+  .logo{
+    gap: 8px;
+  }
+
+  .logo img{
+    height: 48px;
+    width: auto;
+  }
+
+  .logo-text,
+  .logo-text2{
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  /* HAMBURGER */
+  .hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    z-index: 2000;
+  }
+
+  /* NAV */
+  nav{
+    width: auto;
+  }
+
+  nav ul{
+    display: none;
+    list-style: none;
+  }
+
+  /* MENU ABIERTO */
+  body.menu-open nav ul{
+
+    display: flex;
     flex-direction: column;
-    gap: 6px;
-    align-items: stretch;
-    margin: 0;
-    padding: 12px 16px 20px 16px;
+    gap: 10px;
+
+    position: fixed;
+
+    top: 75px;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    padding: 20px;
+
     background: white;
-    position: absolute;
-    top: calc(var(--header-height) + 8px);
-    left: 8px;
-    right: 8px;
-    border-radius: 12px;
-    box-shadow: 0 16px 36px rgba(4,20,40,0.12);
-    z-index:150;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+
+    z-index: 1500;
   }
 
-  header.menu-open nav ul li {
-    display:block;
+  body.menu-open nav ul li{
+    width: 100%;
   }
 
-  header.menu-open nav a{
-    padding: 10px 12px;
-    font-size:15px;
+  body.menu-open nav ul li a{
+
+    display: block;
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    font-size: 16px;
+
+    border-radius: 10px;
+
     color: #172b3a;
-    background: transparent;
-    border-radius: 8px;
-    display:block;
   }
-  header.menu-open .submenu-nav{
+
+  body.menu-open nav ul li a:hover{
+    background: #0f5583;
+    color: white;
+  }
+
+  /* SUBMENU */
+  body.menu-open .submenu-nav{
+
     position: static;
-    box-shadow: none;
-    padding-left: 10px;
-    margin-top:6px;
-    display:none;
+
+    display: none;
+
+    padding-left: 15px;
+
+    margin-top: 5px;
+
     background: transparent;
-  }
-  /* Expand submenu inside mobile menu on click - we'll rely on small JS to toggle class .open */
-  header.menu-open nav li.open > .submenu-nav{
-    display:block;
-    padding-left: 12px;
-    margin-top: 6px;
-  }
-  header.menu-open nav li.open > a::after{
-    content: "▲";
-    float: right;
-    font-size:12px;
-    transform: rotate(0deg);
+
+    box-shadow: none;
   }
 
-  /* Logo adjustments */
-  .logo{ gap:8px; }
-  .logo img{ height:48px; width:auto; }
-  .logo-text, .logo-text2{ font-size:16px; font-weight:700; }
+  body.menu-open nav li.open > .submenu-nav{
+    display: flex;
+    flex-direction: column;
+  }
 
-  /* Submenu alignment on mobile */
-  .dropdown .submenu-nav{ right:auto; left:0; min-width: auto; }
-
-  /* Hero: use mobile hero image (lighter weight and crop) */
+  /* HERO */
   .hero{
-    min-height:60vh;
-    padding:36px 12px;
+    min-height: 60vh;
+
+    padding: 36px 12px;
+
     background-image: url('fondo_principal_mobile.png');
-    background-size:cover;
-    background-position:center;
+
+    background-size: cover;
+    background-position: center;
   }
-  .hero h1{ font-size:28px; margin-bottom:10px; }
-  .hero p{ font-size:14px; margin-bottom:14px; }
 
-  /* Sections stack vertically */
-  .section{ padding:36px 16px; }
-  .section-title{ font-size:24px; text-align:center; margin-bottom:8px; }
-  .section-subtitle{ font-size:13px; text-align:center; margin-bottom:20px; }
+  /* SECTIONS */
+  .section{
+    padding: 36px 16px;
+  }
 
-  /* Grids become single column by default */
-  .grid.cols-2, .grid.cols-3, .grid.cols-4{ grid-template-columns: 1fr; }
-  .funciones-grid{ grid-template-columns: repeat(2,1fr); gap:14px; }
-  .videos-grid{ grid-template-columns: 1fr; gap:18px; }
-  .creadores-grid{ grid-template-columns: 1fr; gap:18px; }
+  .section-title{
+    font-size: 24px;
+    text-align: center;
+  }
 
-  /* Hide / show helpers */
-  .hide-mobile{ display:none; }
-  .show-mobile{ display:block; }
+  .section-subtitle{
+    font-size: 13px;
+    text-align: center;
+  }
 
-  /* Footer smaller */
-  footer{ padding:24px 16px; text-align:center; }
+  /* GRIDS */
+  .funciones-grid{
+    grid-template-columns: repeat(2,1fr);
+    gap: 14px;
+  }
 
-  /* Carousel fallback adjustments */
-  .carousel-fallback .card{ min-width:82%; margin-left:8px; margin-right:8px; box-shadow:0 8px 26px rgba(4,20,40,0.06); border-radius:16px; }
+  .videos-grid{
+    grid-template-columns: 1fr;
+  }
 
-  /* Buttons */
-  .btn{ padding:10px 14px; font-size:14px; }
+  .creadores-grid{
+    grid-template-columns: 1fr;
+  }
+
+  footer{
+    padding: 24px 16px;
+    text-align: center;
+  }
 }
-
-/* =====================
-   Responsive: Very small (<=480px)
-   Extra tweaks to ensure one-line header and legibility
-   ===================== */
-@media (max-width: 480px){
-  .logo img{ height:44px; }
-  .logo-text, .logo-text2{ font-size:14px; }
-  nav a{ font-size:12px; padding:6px 6px; }
-  .hero h1{ font-size:22px; }
-  .section-title{ font-size:20px; }
-  .feature-card p, .card p{ font-size:13px; }
-  .funciones-grid{ grid-template-columns: 1fr; }
-}
-
-/* =====================
-   Accessibility helpers
-   ===================== */
-.sr-only{
-  position:absolute !important;
-  height:1px; width:1px;
-  overflow:hidden; clip:rect(1px,1px,1px,1px);
-  white-space:nowrap;
-}
-
-/* End of file */

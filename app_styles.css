@@ -343,71 +343,207 @@
 }
 
 /* Mobile: carrusel VERTICAL (tarjetas apiladas) */
-@media (max-width: 768px) {
-  .carousel-section {
-    flex-direction: column;
-    padding: 30px 12px;
-    border-radius: 18px;
-  }
+/* =========================================
+   FIX FINAL RESPONSIVE APP.HTML
+========================================= */
 
-  .carousel-container {
+@media (max-width: 768px){
+
+  /* EVITAR SCROLL HORIZONTAL */
+  html, body{
+    overflow-x: hidden;
     width: 100%;
-    overflow: visible; /* permitimos que el contenido vertical sea visible */
-    padding: 0;
   }
 
-  /* El track pasa a columna en móvil (sin scroll horizontal) */
-  .carousel-track {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0;
-    overflow: visible;           /* importante: quitar overflow-x para evitar scroll horizontal */
-    scroll-snap-type: none;      /* desactivar scroll-snap en vertical */
-    -webkit-overflow-scrolling: auto;
-  }
-
-  /* Cada tarjeta ocupa el ancho completo (con márgenes laterales opcionales) */
-  .carousel-track > .app-card {
-    flex: none;
-    width: 100%;
+  *{
     max-width: 100%;
-    min-width: 0;
-    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* ===== HEADER ===== */
+
+  header{
+    width: 100%;
+    padding: 10px 14px;
+  }
+
+  .header-inner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .logo{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 1;
+  }
+
+  .logo img{
+    height: 45px;
+    width: auto;
+  }
+
+  .logo-text,
+  .logo-text2{
+    font-size: 14px;
+  }
+
+  .hamburger{
+    display: flex !important;
+    flex-shrink: 0;
+  }
+
+  /* ===== TITULOS ===== */
+
+  .section{
+    width: 100%;
+    padding: 30px 14px;
+    overflow: hidden;
+  }
+
+  .section-title{
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 15px;
+
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .section-subtitle{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 auto 25px auto;
+
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* ===== CARRUSEL ===== */
+
+  .carousel-section{
+    width: 100%;
+    padding: 40px 0;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .carousel-container{
+    width: 100%;
+    overflow: hidden;
+    padding: 60px 0 20px;
+  }
+
+  .carousel-track{
+    display: flex;
+    gap: 18px;
+    transition: transform 0.5s ease;
+  }
+
+  /* ===== TARJETAS ===== */
+
+  .app-card{
+    min-width: 82vw;
+    max-width: 82vw;
+
     height: auto;
-    transform: none !important;
+    min-height: 500px;
+
+    flex-shrink: 0;
+
+    border-radius: 28px;
+
+    padding: 20px 18px;
+
+    opacity: 0.45;
+    transform: scale(0.86);
+
+    transition: 0.4s ease;
+  }
+
+  /* TARJETA ACTIVA */
+  .app-card.active{
     opacity: 1 !important;
-    filter: none !important;
-    scroll-snap-align: none;
-    box-shadow: 0 8px 26px rgba(4,20,40,0.06);
-    border-radius: 16px;
-    padding: 20px;
+    transform: scale(1) !important;
+
+    background: linear-gradient(180deg, #86aace, #0d2e51) !important;
   }
 
-  /* Ajuste de la imagen "flotante" para que no provoque overflow:
-     pasamos a posición relativa y la centramos arriba de la tarjeta */
-  .app-card img {
-    position: relative;
-    top: -30px;           /* mantiene efecto "levantado" pero sin overflow horizontal */
+  .app-card.active h3,
+  .app-card.active p{
+    color: white !important;
+  }
+
+  /* ===== IMAGEN ===== */
+
+  .app-card img{
+    width: 95px;
+
+    position: absolute;
+    top: -40px;
     left: 50%;
+
     transform: translateX(-50%);
-    width: 100px;         /* ajustar tamaño según prefieras */
-    display: block;
-    margin: 0 auto;
   }
 
-  .card-info {
-    margin-top: 12px;     /* ya no necesita tanto espacio porque la imagen es relativa */
-    padding: 0 12px;
+  /* ===== TEXTO ===== */
+
+  .card-info{
+    margin-top: 90px;
+    padding: 0 5px;
   }
 
-  .card-info h3 { font-size: 20px; }
-  .card-info p  { font-size: 13px; }
+  .card-info h3{
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
 
-  /* Ocultar flechas si las tienes */
-  .arrow { display: none; }
+  .card-info p{
+    font-size: 13px;
+    line-height: 1.8;
+  }
 
-  /* Titulos / subtitulos en móvil */
-  .section-title { font-size: 26px; text-align: center; }
-  .section-subtitle { font-size: 13px; text-align: center; margin-left: 0; }
+  /* ===== FLECHAS ===== */
+
+  .arrow{
+    display: none;
+  }
+
+}
+
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 480px){
+
+  .section-title{
+    font-size: 24px;
+  }
+
+  .section-subtitle{
+    font-size: 13px;
+  }
+
+  .app-card{
+    min-width: 88vw;
+    max-width: 88vw;
+    min-height: 470px;
+  }
+
+  .card-info h3{
+    font-size: 18px;
+  }
+
+  .card-info p{
+    font-size: 12px;
+  }
+
 }
