@@ -335,54 +335,74 @@
         }
 
 
-        /* ===== Videos Explicativos ===== */
-        .videos {
-            background-color: white;
-        }
+        /* ===== Video Explicativo ===== */
+        .videos{
+    background-color: white;
+    width: 100%;
+}
 
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
+.videos-grid{
+    width: 100%;
 
-        .videos-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .videos-card:hover {
-            transform: translateY(-5px);
-        }
+    margin-top: 40px;
+}
 
-        .videos-image {
-            width: 100%;
-            height: 250px;
-            background-color: #e0e0e0;
-            object-fit: cover;
-        }
+.videos-card{
 
-        .videos-info {
-            padding: 30px;
-        }
+    width: 100%;
+    max-width: 850px;
 
-        .videos-name {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
+    background-color: white;
 
-        .videos-description {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+
+    transition: transform 0.3s;
+
+    margin: 0 auto;
+}
+
+.videos-card:hover{
+    transform: translateY(-5px);
+}
+
+.video-player{
+
+    width: 100%;
+
+    height: 450px;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: black;
+}
+
+.videos-info{
+    padding: 30px;
+    text-align: center;
+}
+
+.videos-name{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.videos-description{
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
 
         /* ===== FOOTER ===== */
         footer {

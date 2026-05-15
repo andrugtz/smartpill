@@ -379,11 +379,16 @@ function updateCarousel() {
     track.style.transform =
         `translateX(calc(50% - ${currentIndex * cardWidth + (cardWidth / 2)}px))`;
 
+    /* SOLO activar efecto active en laptop */
+
+if(window.innerWidth > 768){
+
     cards.forEach(card => {
         card.classList.remove("active");
     });
 
     cards[currentIndex].classList.add("active");
+}
 }
 
 function moveSlide(direction){
