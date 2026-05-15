@@ -982,6 +982,10 @@ footer {
     left: auto;
   }
 
+  .hamburger{
+    margin-left: 175px;
+  }
+
   /* Secciones y titulos en móvil */
   .section {
     padding: 28px 16px;
@@ -994,18 +998,18 @@ footer {
   .funciones-grid { grid-template-columns: repeat(2,1fr); gap: 15px; }
   .videos-grid { grid-template-columns: 1fr; gap: 20px; }
   .videos .section-title{
-        margin-left: 15px;
+        margin-left: 10px;
         width: 100%;
         }
 
     .videos .section-subtitle {
-        margin-left: 10px;
+        margin-left: 5px;
         }
 
     .videos-grid {
         width: 100%;
         display: flex;
-        margin-left: 10px;
+        margin-left: 5px;
         margin-top: 20px;
         padding: 0 20px; /* espacio lateral en pantallas pequeñas */
         }
