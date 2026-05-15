@@ -223,9 +223,9 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 40px;
             margin-left: 60px;
             margin-right: 60px;
+            margin-bottom: 40px;
         }
 
         .stat {
@@ -336,73 +336,78 @@
 
 
         /* ===== Video Explicativo ===== */
-        .videos{
-    background-color: white;
-    width: 100%;
+.videos {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 60px 0; /* separación superior/inferior */
 }
 
-.videos-grid{
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: 40px;
+/* Sólo para la sección de videos: quitar margen izquierdo y centrar textos */
+.videos .section-title{
+  margin-left: 430px;
+  width: 100%;
 }
 
-.videos-card{
-
-    width: 100%;
-    max-width: 850px;
-
-    background-color: white;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-
-    transition: transform 0.3s;
-
-    margin: 0 auto;
+.videos .section-subtitle {
+margin-left: 470px;
 }
 
-.videos-card:hover{
-    transform: translateY(-5px);
+/* Contenedor que centra la tarjeta */
+.videos-grid {
+  width: 100%;
+  display: flex;
+  margin-left: 310px;
+  margin-top: 20px;
+  padding: 0 20px; /* espacio lateral en pantallas pequeñas */
 }
 
-.video-player{
-
-    width: 100%;
-
-    height: 450px;
-
-    display: block;
-
-    object-fit: cover;
-
-    background: black;
+/* Tarjeta con ancho tipo "celular" pero responsiva */
+.videos-card {
+  width: 360px;        /* ancho tipo móvil (puedes cambiar a 375px si prefieres) */
+  max-width: 100%;     /* no exceder el ancho del contenedor en pantallas pequeñas */
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.10);
+  transition: transform 0.3s;
+  margin: 0 auto;      /* asegura centrado en su contenedor */
 }
 
-.videos-info{
-    padding: 30px;
-    text-align: center;
+/* Ajuste del reproductor para mantener proporción y ocupar el ancho de la tarjeta */
+.video-player {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16; /* mantiene proporción estándar (landscape). Cambia a 9/16 si tu video es vertical) */
+  display: block;
+  object-fit: cover;
+  background: #000;
 }
 
-.videos-name{
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #2c3e50;
+/* Información debajo del video */
+.videos-info {
+  padding: 18px 20px;
+  text-align: center;
 }
 
-.videos-description{
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
+.videos-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2c3e50;
 }
+
+.videos-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Hover opcional */
+.videos-card:hover {
+  transform: translateY(-6px);
+}
+
+
 
         /* ===== FOOTER ===== */
         footer {
