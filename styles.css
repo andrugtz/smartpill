@@ -344,12 +344,12 @@
 
 /* Sólo para la sección de videos: quitar margen izquierdo y centrar textos */
 .videos .section-title{
-  margin-left: 470px;
+  margin-left: 540px;
   width: 100%;
 }
 
 .videos .section-subtitle {
-margin-left: 510px;
+margin-left: 580px;
 }
 
 /* Contenedor que centra la tarjeta */

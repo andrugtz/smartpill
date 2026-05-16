@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="funciones_styles.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="header-inner">
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+
+            <img src="logo.png" alt="Logo SmartPill">
+
+            <div class="logo-name">
+                <span class="logo-text">Smart</span>
+                <span class="logo-text2">Pill</span>
+            </div>
+
+        </a>
+
+        <!-- BOTON HAMBURGUESA -->
+        <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            type="button"
+        >
+            <span class="bar"></span>
+        </button>
+
+        <!-- NAV -->
+        <nav id="main-nav" class="nav-container">
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li class="dropdown">
+
+                    <a href="index.html#funciones">
+                        Funciones
+                    </a>
+
+                    <ul class="submenu-nav">
+
+                        <li>
+                            <a href="app.html">App</a>
+                        </li>
+
+                        <li>
+                            <a href="software.html">Software</a>
+                        </li>
+
+                        <li>
+                            <a href="dispositivo.html">Dispositivo</a>
+                        </li>
+
+                        <li>
+                            <a href="hardware.html">Hardware</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li>
+                    <a href="index.html#videos">
+                        Video de Funcionamiento
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#nosotros">
+                        Sobre Nosotros
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- SECCION -->
+<section class="section">
+
+    <h2 class="section-title">
+        Componentes Electrónicos    
+    </h2>
+
+    <p class="section-subtitle">
+        Conoce los componentes electrónicos utilizados en SmartPill para 
+        controlar el funcionamiento, las alertas y la comunicación 
+        inteligente del dispositivo.
+    </p>
+
+    <!-- CARRUSEL -->
+    <section class="carousel-section">
+
+        <button class="arrow left" onclick="moveSlide(-1)">
+            ❮
+        </button>
+
+        <div class="carousel-container">
+
+            <div class="carousel-track">
+
+                <!-- CARD 1 -->
+                <div class="app-card active">
+                    <img src="esp32_hard.png" alt="">
+                    <div class="card-info">
+                        <h3>
+                            ESP32
+                        </h3>
+                        <p>
+                            El ESP32 actúa como la unidad de procesamiento del sistema, ejecutando la 
+                            lógica de programación y controlando las entradas y salidas digitales. 
+                            Gestiona la activación de LEDs, buzzer y lectura del botón, además de 
+                            establecer comunicación inalámbrica mediante Wi-Fi y Bluetooth para el 
+                            envío de datos a la aplicación.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="app-card">
+                    <img src="leds_hard.png" alt="">
+                    <div class="card-info">
+                        <h3>
+                            LEDs
+                        </h3>
+                        <p>
+                            Los LEDs son diodos emisores de luz que convierten energía eléctrica en luz 
+                            mediante polarización directa. Se activan a través de señales digitales 
+                            enviadas por el ESP32 para indicar visualmente el compartimento correspondiente.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="app-card">
+                    <img src="buzzer_hard.png" alt="">
+                    <div class="card-info">
+                        <h3>
+                            Buzzer
+                        </h3>
+                        <p>
+                            EEl buzzer transforma señales eléctricas en vibraciones mecánicas que producen 
+                            sonido. Es activado mediante pulsos eléctricos controlados por el microcontrolador 
+                            para generar alertas auditivas programadas. 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="app-card">
+                    <img src="boton_hard.png" alt="">
+                    <div class="card-info">
+                        <h3>
+                            Botón
+                        </h3>
+                        <p>
+                             El botón funciona como un interruptor momentáneo que modifica el estado lógico de una 
+                             entrada digital del ESP32 al ser presionado, permitiendo detectar la interacción del 
+                             usuario para detener alarmas y registrar eventos. 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="app-card">
+                    <img src="transistor_hard.png" alt="">
+                    <div class="card-info">
+                        <h3>
+                            Transistor
+                        </h3>
+                        <p>
+                             El transistor funciona como un interruptor electrónico controlado por corriente o voltaje, 
+                             permitiendo manejar cargas que requieren mayor corriente de la que el ESP32 puede 
+                             suministrar directamente, como el buzzer o múltiples LEDs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="app-card">
+                    <img src="c_hard.png" alt="">
+                    <div class="card-info">
+                        <h3>
+                            Módulo TP4056 USB-C
+                        </h3>
+                        <p>
+                             El TP4056 es un circuito integrado diseñado para controlar la carga de baterías de litio 
+                             mediante el método de corriente constante y voltaje constante (CC/CV), proporcionando 
+                             protección y regulación durante el proceso de carga a través de USB-C.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD 7 -->
+                <div class="app-card">
+                    <img src="bateria_hard.png" alt="">
+                    <div class="card-info">
+                        <h3>
+                            Batería LiPo 3.7V
+                        </h3>
+                        <p>
+                             La batería LiPo almacena energía eléctrica mediante reacciones electroquímicas internas y 
+                             suministra un voltaje nominal de 3.7V al circuito, proporcionando alimentación portátil y 
+                             estable para el funcionamiento del sistema electrónico.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="arrow right" onclick="moveSlide(1)">
+            ❯
+        </button>
+
+    </section>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        &copy; CETI Rio Santiago | Contáctanos:
+
+        <a href="mailto:a22300052@ceti.mx">
+            a22300052@ceti.mx
+        </a>
+
+        |
+
+        <a href="mailto:a22300037@ceti.mx">
+            a22300037@ceti.mx
+        </a>
+    </p>
+
+</footer>
+
+<!-- SCRIPT MENU -->
+<script>
+
+(function () {
+      const header = document.querySelector('header');
+      const btn = document.getElementById('hamburger');
+      const nav = document.getElementById('main-nav');
+
+      if (!btn || !header || !nav) return;
+
+      btn.addEventListener('click', () => {
+        const open = document.body.classList.toggle('menu-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflowX = open ? 'hidden' : '';      });
+
+      // Toggle submenus on mobile
+      document.querySelectorAll('#main-nav .dropdown > a').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const parent = link.parentElement;
+            parent.classList.toggle('open');
+          }
+        });
+      });
+
+      // Close menu when resizing to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && document.body.classList.contains('menu-open')) {
+          document.body.classList.remove('menu-open');
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+          // close any open submenu states
+          document.querySelectorAll('#main-nav .dropdown.open').forEach(li => li.classList.remove('open'));
+        }
+      });
+
+      // Close menu on outside click
+      document.addEventListener('click', (e) => {
+        if (!document.body.classList.contains('menu-open')) return;
+        // if click is outside header-inner, close menu
+        const headerInner = document.querySelector('.header-inner');
+        if (headerInner && !headerInner.contains(e.target)) {
+          document.body.classList.remove('menu-open');
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
+    })();
+
+</script>
+
+<!-- SCRIPT CARRUSEL -->
+<script>
+
+const track = document.querySelector(".carousel-track");
+const cards = document.querySelectorAll(".app-card");
+
+let currentIndex = 0;
+
+function updateCarousel() {
+
+    const isMobile = window.innerWidth <= 768;
+
+    let cardWidth;
+
+    if(isMobile){
+
+        cardWidth = window.innerWidth * 0.82 + 18;
+
+    } else {
+
+        cardWidth = 310;
+    }
+
+    track.style.transform =
+        `translateX(calc(50% - ${currentIndex * cardWidth + (cardWidth / 2)}px))`;
+
+    /* SOLO activar efecto active en laptop */
+
+if(window.innerWidth > 768){
+
+    cards.forEach(card => {
+        card.classList.remove("active");
+    });
+
+    cards[currentIndex].classList.add("active");
+}
+}
+
+function moveSlide(direction){
+
+    currentIndex += direction;
+
+    if(currentIndex < 0){
+        currentIndex = 0;
+    }
+
+    if(currentIndex >= cards.length){
+        currentIndex = cards.length - 1;
+    }
+
+    updateCarousel();
+}
+
+/* TOUCH / SWIPE */
+
+let startX = 0;
+
+track.addEventListener("touchstart", e => {
+
+    startX = e.touches[0].clientX;
+
+});
+
+track.addEventListener("touchend", e => {
+
+    let endX = e.changedTouches[0].clientX;
+
+    let diff = startX - endX;
+
+    if(diff > 50){
+        moveSlide(1);
+    }
+
+    if(diff < -50){
+        moveSlide(-1);
+    }
+
+});
+
+window.addEventListener("resize", updateCarousel);
+
+updateCarousel();
+
+</script>
+
+</body>
+</html>
